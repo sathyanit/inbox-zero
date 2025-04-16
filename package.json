@@ -1,0 +1,48 @@
+{
+  "name": "inbox-zero",
+  "private": true,
+  "scripts": {
+    "build": "turbo build --filter=./apps/web",
+    "dev": "turbo dev --filter=./apps/web",
+    "test": "turbo run test --filter=./apps/web",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prettier": "npx prettier --write \"**/*.{ts,tsx}\"",
+    "prepare": "husky install",
+    "ncu": "ncu -u -ws",
+    "format-and-lint": "biome check .",
+    "format-and-lint:fix": "biome check . --write"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@inboxzero/eslint-config": "workspace:*",
+    "@turbo/gen": "2.4.4",
+    "cross-env": "7.0.3",
+    "eslint": "9.23.0",
+    "husky": "9.1.7",
+    "lint-staged": "15.5.0",
+    "next": "15.2.4",
+    "next-axiom": "1.9.1",
+    "prettier": "3.5.3",
+    "turbo": "2.4.4"
+  },
+  "packageManager": "pnpm@10.7.0",
+  "lint-staged": {
+    "*.{ts,tsx,md}": "prettier --write"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.0.10",
+      "@types/react-dom": "19.0.4"
+    }
+  },
+  "dependencies": {
+    "@next/mdx": "15.2.4",
+    "@sentry/nextjs": "9.10.1",
+    "@serwist/next": "9.0.12",
+    "@t3-oss/env-nextjs": "0.12.0"
+  }
+}

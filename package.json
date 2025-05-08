@@ -1,0 +1,39 @@
+{
+  "name": "inbox-zero",
+  "private": true,
+  "scripts": {
+    "build": "turbo build --filter=./apps/web",
+    "dev": "turbo dev --filter=./apps/web",
+    "test": "turbo run test --filter=./apps/web",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prettier": "npx prettier --write \"**/*.{ts,tsx}\"",
+    "prepare": "husky install",
+    "ncu": "ncu -u -ws",
+    "format-and-lint": "biome check .",
+    "format-and-lint:fix": "biome check . --write"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@inboxzero/eslint-config": "workspace:*",
+    "@turbo/gen": "2.5.0",
+    "eslint": "9.24.0",
+    "husky": "9.1.7",
+    "lint-staged": "15.5.1",
+    "prettier": "3.5.3",
+    "turbo": "2.5.0"
+  },
+  "packageManager": "pnpm@10.8.1+sha512.c50088ba998c67b8ca8c99df8a5e02fd2ae2e2b29aaf238feaa9e124248d3f48f9fb6db2424949ff901cffbb5e0f0cc1ad6aedb602cd29450751d11c35023677",
+  "lint-staged": {
+    "*.{ts,tsx,md}": "prettier --write"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.0.10",
+      "@types/react-dom": "19.0.4"
+    }
+  }
+}
